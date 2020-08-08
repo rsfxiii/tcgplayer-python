@@ -1,6 +1,8 @@
-# TCGPlayer-CLI (Under Development)
+# TCGPlayer(Under Development)
 
 [![Generic badge](https://img.shields.io/badge/Python-3.7-COLOR.svg)](https://shields.io/)
+
+**TCGPlayer** is a Python library to interact with the TCGPlayer (Trading Card Game Player) API.
 
 ## (Current) Features
 * Auto-loads configuration `config.ini` file from local directory & handles authorization behind the scenes
@@ -25,7 +27,7 @@
 
 ## Project Goals
 
-0. Write a maintainable, clean, and tested Python tool:
+0. Write a maintainable, clean, and tested Python library:
     * Adhere to [PEP8 Style Guide for Python](https://www.python.org/dev/peps/pep-0008/)
     * Pair features with reasonable, effective unit tests
     * Lint, document, and distribute the package
@@ -33,6 +35,3 @@
 1. Retrieve data from the [TCGPlayer API](https://docs.tcgplayer.com/docs):
     * Implement Class-based representation of the TCG Player API structure
       * Top-Level Endpoints: **App**, **Catalog**, **Inventory**, **Prices**, **Stores**
-
-2. Provide a command-line tool for interacting with API implementation:
-    * Using [Click](https://click.palletsprojects.com/en/7.x/) command-line library to handle heavy-lifting
