@@ -3,21 +3,36 @@
 [![Generic badge](https://img.shields.io/badge/Python-3.7-COLOR.svg)](https://shields.io/)
 
 ## (Current) Features
-* Auto-loads configuration from local directory & handles authorization behind the scenes
-* Isolated Python 3.7 environment & dependency handling (using [Pipenv](https://docs.pipenv.org/en/latest/))
+* Auto-loads configuration `config.ini` file from local directory & handles authorization behind the scenes
+
+## Endpoint Methods
+
+### Catalog Endpoints
+**Categories**
+- `.list` - List all Categories of TCGPlayer resources
+- `.get_details` - View detailed information about a Category
+- `.get_search_manifest` - Retrieve search manfiest for a Category (sorting & filtering options)
+- `.search_products` - Search for Product within Category by search term
+- `.list_groups` - List all Category Groups
+- `.get_printings` - Retrieve printinggs within a Category
+- `.get_rarities` - Retrieive rarities within a Category
+- `.list_conditions` - List conditions within a Category
+- `.list_languages` - List available languages associated with a Category
+- `.list_media` - List available media associated with a Category
+
+**Groups**
+- `list` - List details of all Groups in the Catalog
 
 ## Project Goals
 
-0. Create a useful tool with minimal configuration required:
+0. Write a maintainable, clean, and tested Python tool:
     * Adhere to [PEP8 Style Guide for Python](https://www.python.org/dev/peps/pep-0008/)
     * Pair features with reasonable, effective unit tests
     * Lint, document, and distribute the package
 
 1. Retrieve data from the [TCGPlayer API](https://docs.tcgplayer.com/docs):
-    * Use object-oriented features of Python; focus on appropriate inheritance
     * Implement Class-based representation of the TCG Player API structure
       * Top-Level Endpoints: **App**, **Catalog**, **Inventory**, **Prices**, **Stores**
-      
 
 2. Provide a command-line tool for interacting with API implementation:
     * Using [Click](https://click.palletsprojects.com/en/7.x/) command-line library to handle heavy-lifting
