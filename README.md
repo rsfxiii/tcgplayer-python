@@ -1,4 +1,4 @@
-# TCGPlayer(Under Development)
+# TCGPlayer (Under Development)
 
 [![Generic badge](https://img.shields.io/badge/Python-3.7-COLOR.svg)](https://shields.io/)
 
