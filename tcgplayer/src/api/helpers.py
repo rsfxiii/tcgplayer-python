@@ -1,8 +1,10 @@
-# TODO: Add unit tests
-def _build_path_param_str(tuples: list):
-    ''' Creates full param path string from tuples of key/value args '''
-    paramstring = ''
-    for i in tuples:
-        substr = ''.join([i[0], i[1]])
-        paramstring = ''.join([paramstring, substr])
-    return paramstring
+import urllib.parse as urlparse
+from urllib.parse import urlencode
+
+
+def encode_query_params(url, params):
+    parts = list(urlparse.urlparse(url))
+    query = dict(urlparse.parse_qs(parts[4]))
+    query.update(params)
+    parts[4] = urlencode(query)
+    return urlparse.urlunparse(parts)
