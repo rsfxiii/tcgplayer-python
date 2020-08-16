@@ -34,4 +34,5 @@
 
 1. Retrieve data from the [TCGPlayer API](https://docs.tcgplayer.com/docs):
     * Implement Class-based representation of the TCG Player API structure
-      * Top-Level Endpoints: **App**, **Catalog**, **Inventory**, **Prices**, **Stores**
+      * Top-Level Endpoints: **App**, **Catalog**, **Inventory**, **Prices**
+
