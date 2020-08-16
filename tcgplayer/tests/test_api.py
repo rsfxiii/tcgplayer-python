@@ -1,6 +1,6 @@
 import unittest
 
-from src.api.endpoints import TCGPlayer, Catalog, Category, Group
+from src.api.endpoints import TCGPlayer
 
 
 class TCGPlayerTestCase(unittest.TestCase):

@@ -55,48 +55,13 @@ class Client:
         else:
             print(res.text)
 
-
-
-
-if __name__ == '__main__':
-    # Bootstrap the client
-    client = Client()
-    client.read_config()
-
-    # Init an API instance w/ Client    
-    categories = Categories(client=client)
-
-    client.refresh_access(refresh_url=categories.refresh_url)
-    client.authorize_session()
-
-    groups = Groups(client)
-    print(groups.base_url)
-    # print(groups.list(1))
-
-    import urllib.parse as urlparse
-    from urllib.parse import urlencode
-
-    parts = list(urlparse.urlparse(groups.base_url))
-    params = {'categoryId': 1}
-
-    query = dict(urlparse.parse_qs(parts[4]))
-    query.update(params)
-
-    assert query == params
-
-    parts[4] = urlencode(query)
-    print(parts)
-
-    print(urlparse.urlunparse(parts))
-
-    # TODO: Write tests for these
-    # print(categories.list())
-    # print(categories.get_details('1'))
-    # print(categories.get_search_manifest('1'))
-    # print(categories.list_groups('1'))
-    # print(categories.get_rarities('1'))
-    # print(categories.get_printings('1'))
-    # print(categories.list_languages('1'))
-    # print(categories.list_media('1'))
-
-    # import pdb; pdb.set_trace()
+# if __name__ == '__main__':
+#     # Bootstrap the client
+#     client = Client()
+#     client.read_config()
+#
+#     # Init an API instance w/ Client
+#     categories = Categories(client=client)
+#
+#     client.refresh_access(refresh_url=categories.refresh_url)
+#     client.authorize_session()

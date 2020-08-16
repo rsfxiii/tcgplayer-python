@@ -8,3 +8,7 @@ def encode_query_params(url, params):
     query.update(params)
     parts[4] = urlencode(query)
     return urlparse.urlunparse(parts)
+
+
+def convert_list_to_string(list_arg, sep=","):
+    raise NotImplemented

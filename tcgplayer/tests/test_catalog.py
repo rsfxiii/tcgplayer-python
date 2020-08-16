@@ -1,6 +1,6 @@
 import unittest
 
-from src.api.endpoints import Catalog, Category, Group
+from src.api.endpoints import Catalog, Category, Group, Product, SKU, Condition
 
 
 class CatalogTestCase(unittest.TestCase):
@@ -113,7 +113,7 @@ class ProductTestCase(unittest.TestCase):
         self.assertEqual(Product.list(), expected)
 
     def test_get_details(self):
-        expected = 'https://api.tcgplayer.com/catalog/products'
+        expected = 'https://api.tcgplayer.com/catalog/products/1'
         self.assertEqual(Product.get_details(1), expected)
 
     def test_get_details_by_gtin(self):
@@ -122,18 +122,17 @@ class ProductTestCase(unittest.TestCase):
 
     def test_list_skus(self):
         expected = 'https://api.tcgplayer.com/catalog/products/1/skus'
-        self.assertEqual(Product.get_list_skus(1), expected)
+        self.assertEqual(Product.list_skus(1), expected)
 
     def test_list_related_products(self):
         expected = 'https://api.tcgplayer.com/catalog/products/1/productsalsopurchased'
         self.assertEqual(Product.list_related_products(1), expected)
 
-    def test_list_media_types(self):
+    def test_list_media(self):
         expected = 'https://api.tcgplayer.com/catalog/products/1/media'
-        self.assertEqual(Product.list_media_types(1), expected)
+        self.assertEqual(Product.list_media(1), expected)
 
 
-@unittest.skip
 class SKUTestCase(unittest.TestCase):
     def test_is_imported(self):
         self.assertIsNotNone(SKU)
@@ -152,7 +151,6 @@ class SKUTestCase(unittest.TestCase):
         self.assertEqual(SKU.get_details(1), expected)
 
 
-@unittest.skip
 class ConditionTestCase(unittest.TestCase):
     def test_is_imported(self):
         self.assertIsNotNone(Condition)
