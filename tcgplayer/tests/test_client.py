@@ -1,4 +1,4 @@
-from tcgplayer.src.api.client import TCGPlayer, Client
+from src.client import TCGPlayer, Client
 
 import unittest
 

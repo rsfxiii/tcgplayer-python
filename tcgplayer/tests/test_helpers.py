@@ -2,7 +2,7 @@ import types
 
 import unittest
 
-from src.api.helpers import encode_query_params, convert_list_to_string
+from src.helpers import encode_query_params, convert_list_to_string
 
 
 class EncodeParamsTestCase(unittest.TestCase):
