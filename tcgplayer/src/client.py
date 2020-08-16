@@ -13,15 +13,15 @@ class Client:
             'Content-Type': 'application/x-www-form-urlencoded'
         }
 
-        data = {
+        payload = {
             'grant_type': 'client_credentials',
             'client_id': str(os.getenv('PUB_KEY')),
             'client_secret': str(os.getenv('PRIV_KEY'))
         }
 
-        response = requests.post('https://api.tcgplayer.com/token', data, headers)
+        response = requests.post('https://api.tcgplayer.com/token', payload, headers)
         if response.ok:
-            return response.json()
+            return response.json()['access_token']
         else:
             response.raise_for_status()
 
@@ -33,7 +33,7 @@ class Client:
             print('No access_token provided; executing NewClient.refresh_access_token')
             secret = Client.refresh_access_token() # Looking for default .env
 
-        session.headers['Authorization'] = f"Bearer {secret['access_token']}"
+        session.headers['Authorization'] = f"Bearer {token}"
         try:
             response = session.request(method.upper(), url, data)
             return response.json()
@@ -43,9 +43,20 @@ class Client:
 
 # if __name__ == '__main__':
 #
+#     # I'm getting two errors from Pycharm on this line, but it works?
+#     from api.endpoints import Category
+#
+#     # Refresh your access token for the session
 #     access_token = Client.refresh_access_token()
+#
+#     # Make sure it's there before continuing
 #     assert access_token is not None
+#
+#     # Hell, look at it!
 #     print(access_token)
 #
-#     data = Client.handle_request('GET', 'https://api.tcgplayer.com/catalog/categories', {}, None)
+#     # Make the call
+#     data = Client.handle_request('GET', Category.list(), {}, access_token)
+#
+#     # See the response data
 #     print(data)
