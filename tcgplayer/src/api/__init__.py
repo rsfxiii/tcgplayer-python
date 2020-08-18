@@ -1,1 +1,1 @@
-from .endpoints import TCGPlayer, Catalog, Category, Group
+from .catalog import TCGPlayer, Catalog, Category, Group

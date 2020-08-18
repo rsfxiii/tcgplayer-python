@@ -1,29 +1,18 @@
-# TCGPlayer (Under Development)
+# TCGPlayer
 
 [![Generic badge](https://img.shields.io/badge/Python-3.7-COLOR.svg)](https://shields.io/)
 
 **TCGPlayer** is a Python library to interact with the TCGPlayer (Trading Card Game Player) API.
 
-## (Current) Features
-* Auto-loads configuration `config.ini` file from local directory & handles authorization behind the scenes
+## Installation
 
-## Endpoint Methods
+`tcgplayer` requires at least Python 3.7, because it  uses some features which aren't backwards compatible, like function annotations and f-strings.
 
-### Catalog Endpoints
-**Categories**
-- `.list` - List all Categories of TCGPlayer resources
-- `.get_details` - View detailed information about a Category
-- `.get_search_manifest` - Retrieve search manfiest for a Category (sorting & filtering options)
-- `.search_products` - Search for Product within Category by search term
-- `.list_groups` - List all Category Groups
-- `.get_printings` - Retrieve printinggs within a Category
-- `.get_rarities` - Retrieive rarities within a Category
-- `.list_conditions` - List conditions within a Category
-- `.list_languages` - List available languages associated with a Category
-- `.list_media` - List available media associated with a Category
+1. Fork and clone the project repo: `git clone https://github.com/rsfxiii/TCGPlayer`
+2. Add `PUB_KEY`, `PRIV_KEY`, `API_VERSION`, and `APP_ID` values to the `.env` file provided in the repo.
+3. Run tests to make sure the setup works and credentials can be located: `python -m unittest`
 
-**Groups**
-- `list` - List details of all Groups in the Catalog
+
 
 ## Project Goals
 

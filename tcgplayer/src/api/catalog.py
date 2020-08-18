@@ -1,5 +1,5 @@
-class TCGPlayer(object):
-    api_url = 'https://api.tcgplayer.com'
+from .base import TCGPlayer
+from ..helpers import convert_list_to_string
 
 
 class Catalog(object):
@@ -18,8 +18,8 @@ class Category(object):
     @staticmethod
     def get_details(category_ids):
         """ Accepts a string, or list of strings """
-        # TODO: Convert list of strings to comma-delimited string
-        return f"{Category.base_url}/{category_ids}"
+        arg_string = convert_list_to_string(category_ids)
+        return f"{Category.base_url}/{arg_string}"
 
     @staticmethod
     def get_search_manifest(category_id):
@@ -61,8 +61,8 @@ class Group(object):
     @staticmethod
     def get_details(group_ids):
         """ Accepts a string, or list of strings """
-        # TODO: Convert list of strings to comma-delimited string
-        return f"{Group.base_url}/{group_ids}"
+        arg_string = convert_list_to_string(group_ids)
+        return f"{Group.base_url}/{arg_string}"
 
     @staticmethod
     def get_media(group_id):
@@ -84,8 +84,8 @@ class Product(object):
     @staticmethod
     def get_details(product_ids):
         """ Accepts a string, or list of strings """
-        # TODO: Convert list of strings to comma-delimited string
-        return f"{Product.base_url}/{product_ids}"
+        arg_string = convert_list_to_string(product_ids)
+        return f"{Product.base_url}/{arg_string}"
 
     @staticmethod
     def get_details_by_gtin(gtin):
@@ -111,8 +111,8 @@ class SKU(object):
     @staticmethod
     def get_details(sku_ids):
         """ Accepts a string, or list of strings """
-        # TODO: Convert list of strings to comma-delimited string
-        return f"{SKU.base_url}/{sku_ids}"
+        arg_string = convert_list_to_string(sku_ids)
+        return f"{SKU.base_url}/{arg_string}"
 
 
 class Condition(object):

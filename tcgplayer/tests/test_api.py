@@ -1,6 +1,6 @@
 import unittest
 
-from src.api.endpoints import TCGPlayer
+from src.api.catalog import TCGPlayer
 
 
 class TCGPlayerTestCase(unittest.TestCase):
@@ -10,4 +10,3 @@ class TCGPlayerTestCase(unittest.TestCase):
     def test_api_url(self):
         result = TCGPlayer.api_url
         self.assertEqual(result, 'https://api.tcgplayer.com')
-

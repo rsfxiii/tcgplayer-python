@@ -1,6 +1,6 @@
 import unittest
 
-from src.api.endpoints import Catalog, Category, Group, Product, SKU, Condition
+from src.api.catalog import Catalog, Category, Group, Product, SKU, Condition
 
 
 class CatalogTestCase(unittest.TestCase):
@@ -32,9 +32,13 @@ class CategoryTestCase(unittest.TestCase):
         expected = 'https://api.tcgplayer.com/catalog/categories'
         self.assertEqual(Category.list(), expected)
 
-    def test_get_details(self):
+    def test_get_details_single(self):
         expected = 'https://api.tcgplayer.com/catalog/categories/1'
         self.assertEqual(Category.get_details(1), expected)
+
+    def test_get_details_multi(self):
+        expected = 'https://api.tcgplayer.com/catalog/categories/1,2,3'
+        self.assertEqual(Category.get_details([1, 2, 3]), expected)
 
     def test_get_search_manifest(self):
         expected = 'https://api.tcgplayer.com/catalog/categories/1/search/manifest'
@@ -81,10 +85,13 @@ class GroupTestCase(unittest.TestCase):
         expected = 'https://api.tcgplayer.com/catalog/groups'
         self.assertEqual(Group.base_url, expected)
 
-    # TODO: Add test for list of strings argument
-    def test_get_details(self):
+    def test_get_details_single(self):
         expected = 'https://api.tcgplayer.com/catalog/groups/1'
         self.assertEqual(Group.get_details(1), expected)
+
+    def test_get_details_multi(self):
+        expected = 'https://api.tcgplayer.com/catalog/groups/1,2,3'
+        self.assertEqual(Group.get_details([1, 2, 3]), expected)
 
     def test_list_details(self):
         expected = 'https://api.tcgplayer.com/catalog/groups'
@@ -107,14 +114,17 @@ class ProductTestCase(unittest.TestCase):
         expected = 'https://api.tcgplayer.com/catalog/products'
         self.assertEqual(Product.base_url, expected)
 
-    # TODO: Test for handling of query string params
     def test_list(self):
         expected = 'https://api.tcgplayer.com/catalog/products'
         self.assertEqual(Product.list(), expected)
 
-    def test_get_details(self):
+    def test_get_details_single(self):
         expected = 'https://api.tcgplayer.com/catalog/products/1'
         self.assertEqual(Product.get_details(1), expected)
+
+    def test_get_details_multi(self):
+        expected = 'https://api.tcgplayer.com/catalog/products/1,2,3'
+        self.assertEqual(Product.get_details([1, 2, 3]), expected)
 
     def test_get_details_by_gtin(self):
         expected = 'https://api.tcgplayer.com/catalog/products/gtin/1'
@@ -145,10 +155,13 @@ class SKUTestCase(unittest.TestCase):
         expected = 'https://api.tcgplayer.com/catalog/skus'
         self.assertEqual(SKU.base_url, expected)
 
-    # TODO: Test for list of strings as args
-    def test_get_details(self):
+    def test_get_details_single(self):
         expected = 'https://api.tcgplayer.com/catalog/skus/1'
         self.assertEqual(SKU.get_details(1), expected)
+
+    def test_get_details_multi(self):
+        expected = 'https://api.tcgplayer.com/catalog/skus/1,2,3'
+        self.assertEqual(SKU.get_details([1, 2, 3]), expected)
 
 
 class ConditionTestCase(unittest.TestCase):

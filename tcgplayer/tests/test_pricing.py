@@ -3,7 +3,7 @@ import unittest
 from src.api.pricing import Pricing, MarketPrice, ProductPrice, BuylistPrice
 
 
-class PricingTestCase(unittest.testCase):
+class PricingTestCase(unittest.TestCase):
     def test_endpoint(self):
         expected = '/pricing'
         self.assertEqual(Pricing.endpoint, expected)

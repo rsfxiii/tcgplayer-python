@@ -30,8 +30,8 @@ class Client:
 
         session = requests.Session()
         if not token:
-            print('No access_token provided; executing NewClient.refresh_access_token')
-            secret = Client.refresh_access_token() # Looking for default .env
+            print('No access_token provided; executing Client.refresh_access_token')
+            token = Client.refresh_access_token() # Looking for default .env
 
         session.headers['Authorization'] = f"Bearer {token}"
         try:
