@@ -31,7 +31,7 @@ specific_category = Client.handle_request('get', Category.get_details(1), {}, ac
 category_groups = Client.handle_request('get', Category.get_groups(1), {'limit': 10, 'offset': 4}, access_token)
 ```
 
-> NOTE: Endpoint methods, like `Category.get_details` will accept *path* params, while `Client.handle_request` will accept `query` params.
+> NOTE: Endpoint methods, like `Category.get_details` will accept *path* params, while `Client.handle_request` will accept *query* params.
 
 ## Project Goals
 
