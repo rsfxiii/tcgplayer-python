@@ -28,7 +28,7 @@ all_categories = Client.handle_request('GET', Category.list(), {}, access_token)
 specific_category = Client.handle_request('get', Category.get_details(1), {}, access_token)
 
 # Make a call with both path and query params
-category_groups = Client.handle_request('get', Category.get_groups(1), {'limit': 10, 'offset': 4}, access_token)
+category_groups = Client.handle_request('get', Category.get_groups(1), {'limit': 10}, access_token)
 ```
 
 > NOTE: Endpoint methods, like `Category.get_details` will accept *path* params, while `Client.handle_request` will accept *query* params.
