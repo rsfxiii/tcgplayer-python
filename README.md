@@ -6,7 +6,7 @@
 
 ## Installation
 
-`tcgplayer` requires at least Python 3.7, because it  uses some features which aren't backwards compatible, like function annotations and f-strings.
+`tcgplayer` requires at least Python 3.7, because it  uses f-strings (a lot).
 
 1. Fork and clone the project repo: `git clone https://github.com/rsfxiii/TCGPlayer`
 2. Add `PUB_KEY`, `PRIV_KEY`, `API_VERSION`, and `APP_ID` values to the `.env` file provided in the repo.
