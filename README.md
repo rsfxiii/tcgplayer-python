@@ -12,7 +12,19 @@
 2. Add `PUB_KEY`, `PRIV_KEY`, `API_VERSION`, and `APP_ID` values to the `.env` file provided in the repo.
 3. Run tests to make sure the setup works and credentials can be located: `python -m unittest`
 
+## Usage
 
+```python
+# Import the resource endpoint you want to use
+from api.endpoints import Category
+
+# Refresh your access token for the session
+access_token = Client.refresh_access_token()
+
+# Make an API call to TCGPlayer
+data = Client.handle_request('GET', Category.list(), {}, access_token)
+print(data)
+```
 
 ## Project Goals
 
