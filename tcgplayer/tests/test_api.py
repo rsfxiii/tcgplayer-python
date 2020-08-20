@@ -1,6 +1,6 @@
 import unittest
 
-from src.api.catalog import TCGPlayer
+from src.api.base import TCGPlayer
 
 
 class TCGPlayerTestCase(unittest.TestCase):
