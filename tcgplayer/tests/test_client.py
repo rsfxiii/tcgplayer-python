@@ -16,8 +16,8 @@ class ClientTestCase(unittest.TestCase):
             'client_id': 'test-pub-key',
             'client_secret': 'test-priv-key'
         }
-        self.assertEquals(Client.build_access_payload(self.credentials['PUB_KEY'],
-                                                      self.credentials['PRIV_KEY'], expected))
+        self.assertEqual(Client.build_access_payload(self.credentials['PUB_KEY'],
+                                                      self.credentials['PRIV_KEY']), expected)
 
     # TODO: How can we test Client.refresh_access_token()?
     def test_refresh_access_token(self):
