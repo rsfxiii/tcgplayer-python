@@ -6,22 +6,24 @@ import requests
 
 class Client:
     @staticmethod
-    def refresh_access_token(env_file='.env'):
-        dotenv.load_dotenv(env_file or dotenv.find_dotenv())
+    def build_access_payload(client_id, client_secret):
+        return {
+            'grant_type': 'client_credentials',
+            'client_id': str(client_id),
+            'client_secret': str(client_secret)
+        }
 
+    @staticmethod
+    def refresh_access_token():
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
 
-        payload = {
-            'grant_type': 'client_credentials',
-            'client_id': str(os.getenv('PUB_KEY')),
-            'client_secret': str(os.getenv('PRIV_KEY'))
-        }
+        payload = Client.build_access_payload(os.getenv('PUB_KEY'), os.getenv('PRIV_KEY'))
 
         response = requests.post('https://api.tcgplayer.com/token', payload, headers)
         if response.ok:
-            return response.json()['access_token']
+            return response.json()
         else:
             response.raise_for_status()
 
@@ -31,7 +33,7 @@ class Client:
         session = requests.Session()
         if not token:
             print('No access_token provided; executing Client.refresh_access_token')
-            token = Client.refresh_access_token() # Looking for default .env
+            token = Client.refresh_access_token()['access_token']
 
         session.headers['Authorization'] = f"Bearer {token}"
         try:
@@ -42,9 +44,10 @@ class Client:
 
 
 # if __name__ == '__main__':
+#     dotenv.load_dotenv(dotenv.find_dotenv())
 #
-#     # I'm getting two errors from Pycharm on this line, but it works?
-#     from api.endpoints import Category
+#     access_payload = Client.build_access_payload(os.getenv('PUB_KEY'), os.getenv('PRIV_KEY'))
+#     print(access_payload)
 #
 #     # Refresh your access token for the session
 #     access_token = Client.refresh_access_token()
