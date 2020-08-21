@@ -1,22 +1,36 @@
 # TCGPlayer
 
-[![Generic badge](https://img.shields.io/badge/Python-3.7-COLOR.svg)](https://shields.io/)
+[![Version badge](https://img.shields.io/badge/Python-3.7-COLOR.svg)](https://shields.io/)
+![Coverage badge](badges/coverage.svg)
+![License badge](badges/license-GPL-blue.svg)
 
-**TCGPlayer** is a Python library to interact with the TCGPlayer (Trading Card Game Player) API.
+**TCGPlayer** is a Python library to interact with the TCGPlayer (Trading Card Game Player) API. 
+
+## To Contribute
+1. Fork the repo, and clone your fork
+2. Find an issue to work on **or** create an issue to propose changes
+3. Make changes to fork
+4. Tag @rsfxiii in the PR to have it reviewed
 
 ## Installation
 
-`tcgplayer` requires at least Python 3.7, because it  uses f-strings (a lot).
+`tcgplayer` requires at least Python 3.7
+1. Install the package: `pip install tcgplayer`
+2. Edit the `.env` file and add your TCGPlayer API credentials:
 
-1. Fork and clone the project repo: `git clone https://github.com/rsfxiii/TCGPlayer`
-2. Add `PUB_KEY`, `PRIV_KEY`, `API_VERSION`, and `APP_ID` values to the `.env` file provided in the repo.
-3. Run tests to make sure the setup works and credentials can be located: `python -m unittest`
+```
+# .env
+PUB_KEY=my-tcg-pubkey
+PRIV_key=my-tcg-privkey
+```
+
+At this point, you should be ready to use the `Client` to make calls to whatever TCG Player API endpoints you want.
 
 ## Usage
 
-```python
+```
 # Import the resource endpoint you want to use
-from api.endpoints import Category
+from tcgplayer.api.endpoints import Category
 
 # Refresh your access token for the session
 access_token = Client.refresh_access_token()

@@ -78,6 +78,9 @@ target/
 # celery beat schedule file
 celerybeat-schedule
 
+# coverage html
+htmlcov
+
 # SageMath parsed files
 *.sage.py
 
