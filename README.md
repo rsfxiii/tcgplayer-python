@@ -1,10 +1,12 @@
-# TCGPlayer
+# tcgplayer-python
 
 [![Version badge](https://img.shields.io/badge/Python-3.7-COLOR.svg)](https://shields.io/)
 ![Coverage badge](badges/coverage.svg)
 ![License badge](badges/license-GPL-blue.svg)
 
-**TCGPlayer** is a Python library to interact with the TCGPlayer (Trading Card Game Player) API. 
+**tcgplayer-python** is a Python wrapper to interact with the TCGPlayer APIs in a straight-forward way.
+
+> NOTE: The **Store API** is not implemented.
 
 ## To Contribute
 1. Fork the repo, and clone your fork
