@@ -3,12 +3,12 @@ from setuptools import setup, find_packages
 
 if __name__ == '__main__':
     setup(
-        name='tcgplayer',
+        name='tcgplayer-python',
         description='Python 3 library for accessing TCGPlayer APIs',
         version='0.8',
         author='rsfxiii',
         author_email='ryan@raijinn.xyz',
-        url='https://github.com/rsfxiii/TCGPLayer',
+        url='https://github.com/rsfxiii/tcgplayer-python',
         license='GNU General Public License v3',
         classifiers=[
             'Development Status :: 3 - Alpha',
