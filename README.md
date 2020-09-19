@@ -16,8 +16,8 @@
 
 ## Installation
 
-`tcgplayer` requires at least Python 3.7
-1. Install the package: `pip install tcgplayer`
+`tcgplayer-python` requires at least Python 3.7
+1. Install the package: `pip install tcgplayer-python`
 2. Edit the `.env` file and add your TCGPlayer API credentials:
 
 ```
